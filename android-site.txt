@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+public class CadastroAlunos {
+
+    public static void main(String[] args) {
+        // Criar uma estrutura heterogênea (array) do tipo string para cadastrar o nome de 25 alunos
+        String[] alunos = new String[25];
+
+        // Preencher o array com o nome dos alunos
+        preencherAlunos(alunos);
+
+        // Exibir os alunos cadastrados
+        System.out.println("Alunos cadastrados:");
+        exibirAlunos(alunos);
+
+        // Cadastre mais 5 novos alunos
+        cadastrarNovosAlunos(alunos);
+
+        // Exibir a lista atualizada de alunos
+        System.out.println("\nLista atualizada de alunos:");
+        exibirAlunos(alunos);
+    }
+
+    private static void preencherAlunos(String[] alunos) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Preencha o cadastro dos alunos:");
+
+        for (int i = 0; i < alunos.length; i++) {
+            System.out.print("Digite o nome do aluno " + (i + 1) + ": ");
+            alunos[i] = scanner.nextLine();
+        }
+
+        System.out.println("Cadastro concluído!");
+    }
+
+    private static void exibirAlunos(String[] alunos) {
+        for (int i = 0; i < alunos.length; i++) {
+            System.out.println((i + 1) + ". " + alunos[i]);
+        }
+    }
+
+    private static void cadastrarNovosAlunos(String[] alunos) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("\nCadastrar mais 5 alunos:");
+
+        for (int i = 0; i < 5; i++) {
+            System.out.print("Digite o nome do novo aluno " + (i + 1) + ": ");
+            alunos[i] = scanner.nextLine();
+        }
+
+        System.out.println("Novos alunos cadastrados!");
+    }
+}
